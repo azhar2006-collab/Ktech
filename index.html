@@ -37,7 +37,7 @@
   /* ── HEADER ── */
   header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-200); box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
   .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
   .logo img { height: 52px; width: auto; display: block; object-fit: contain; }
   .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
   .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: var(--green-wa); color: #fff; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
@@ -58,7 +58,7 @@
   .nav-item.active { background: rgba(0,0,0,0.2); color: #fff; }
 
   /* ── HERO ── */
-  .hero { background: var(--white); padding: 48px 32px 64px; position: relative; overflow: hidden; }
+  .hero { background: var(--white); padding: 40px 32px 52px; position: relative; overflow: hidden; }
   .hero-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
   .hero-banner-wrap { width: 100%; line-height: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
   .hero-banner { width: 100%; height: auto; display: block; object-fit: cover; object-position: center; aspect-ratio: 16/9; }
@@ -67,9 +67,9 @@
   .hero h1 { font-family: 'DM Serif Display', serif; font-size: 38px; line-height: 1.22; color: var(--text); margin-bottom: 20px; letter-spacing: -0.3px; }
   .hero h1 em { font-style: italic; color: var(--teal-dark); }
   .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 36px; max-width: 720px; }
-  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap;margin-left: 380px; }
 
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(26,173,170,0.3); }
+  .btn-primary { display: inline-flex;align-items: center; gap: 8px; background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(26,173,170,0.3); }
   .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,173,170,0.35); }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--teal-dark); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: var(--radius); border: 2px solid var(--teal); cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
   .btn-secondary:hover { background: var(--teal-light); transform: translateY(-2px); }
@@ -88,7 +88,7 @@
   .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 
   /* ── INTRO ── */
-  .intro { background: var(--white); padding: 88px 32px; }
+  .intro { background: var(--white); padding: 58px 12px; }
   .intro-inner { max-width: 1280px; margin: 0 auto; }
   .intro-header { max-width: 760px; margin-bottom: 48px; }
   .section-tag { display: inline-block; background: var(--teal-light); color: var(--teal-xdark); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; margin-bottom: 16px; }
@@ -110,7 +110,7 @@
   .iss-label { font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.4; }
 
   /* ── PRODUCT CATEGORIES ── */
-  .categories { background: var(--gray-100); padding: 88px 32px; border-top: 1px solid var(--gray-200); }
+  .categories { background: var(--gray-100); padding: 72px 32px; border-top: 1px solid var(--gray-200); }
   .categories-inner { max-width: 1280px; margin: 0 auto; }
   .section-head { text-align: center; margin-bottom: 52px; }
   .section-head h2 { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--text); line-height: 1.26; margin-top: 10px; letter-spacing: -0.3px; }
@@ -133,7 +133,7 @@
   /* ════════════════════════════════════════
      ALTERNATING SECTIONS
   ════════════════════════════════════════ */
-  .alt-section { padding: 96px 32px; position: relative; overflow: hidden; }
+  .alt-section { padding: 76px 32px; position: relative; overflow: hidden; }
   .alt-section--light  { background: var(--white);     border-top: 1px solid var(--gray-200); }
   .alt-section--tinted { background: var(--gray-100);  border-top: 1px solid var(--gray-200); }
 
@@ -164,9 +164,9 @@
   .alt-visual { position: relative; display: flex; flex-direction: column; gap: 16px; }
 
   /* ── FAQ ── */
-  .faq-section { background: var(--gray-100); padding: 88px 32px; border-top: 1px solid var(--gray-200); }
+  .faq-section { background: var(--gray-100); padding: 72px 32px; border-top: 1px solid var(--gray-200); }
   .faq-inner { max-width: 1280px; margin: 0 auto; }
-  .faq-header { text-align: center; margin-bottom: 52px; }
+  .faq-header { text-align: center; margin-bottom: 40px; }
   .faq-header h2 { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--text); margin-bottom: 12px; }
   .faq-header p { font-size: 15px; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
 
@@ -456,12 +456,16 @@
     <div class="hero-left">
       <h1 id="hero-h1">Premium Corporate Gifts, <em>Wedding Return Gifts</em> &amp; Bulk Home Appliance Suppliers</h1>
       <p class="hero-desc">Looking for a trusted corporate gift supplier in Tamil Nadu? KTech manufactures and supplies customized corporate gifts, wedding return gifts, employee gifting products, and branded home appliances for businesses, distributors, supermarkets, and retail chains.</p>
+    <br>
+    <br>
+    <br>
       <div class="hero-ctas">
-        <a href="#enquiry" class="btn-primary">
+        
+       <br><a href="#enquiry" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
           Get Wholesale Quote
         </a>
-        <a href="#catalogue" class="btn-secondary">
+        <br><a href="#catalogue" class="btn-secondary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           Request Catalogue
         </a>
