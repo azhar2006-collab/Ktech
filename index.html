@@ -58,15 +58,15 @@
   .nav-item.active { background: rgba(0,0,0,0.2); color: #fff; }
 
   /* ── HERO ── */
-  .hero { background: linear-gradient(135deg, #f0fdfb 0%, #e8faf9 40%, #d4f5f3 100%); position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,173,170,0.12) 0%, transparent 70%); pointer-events: none; }
-  .hero::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(26,173,170,0.08) 0%, transparent 70%); pointer-events: none; }
-  .hero-inner { max-width: 1280px; margin: 0 auto; padding: 72px 32px 80px; display: grid; grid-template-columns: 55% 45%; gap: 56px; align-items: center; position: relative; z-index: 1; }
+  .hero { background: var(--white); padding: 48px 32px 64px; position: relative; overflow: hidden; }
+  .hero-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+  .hero-banner-wrap { width: 100%; line-height: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .hero-banner { width: 100%; height: auto; display: block; object-fit: cover; object-position: center; aspect-ratio: 16/9; }
   .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 50px; margin-bottom: 20px; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: rgba(255,255,255,0.7); border-radius: 50%; }
   .hero h1 { font-family: 'DM Serif Display', serif; font-size: 38px; line-height: 1.22; color: var(--text); margin-bottom: 20px; letter-spacing: -0.3px; }
   .hero h1 em { font-style: italic; color: var(--teal-dark); }
-  .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 36px; max-width: 520px; }
+  .hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 36px; max-width: 720px; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
   .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(26,173,170,0.3); }
@@ -74,9 +74,7 @@
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--teal-dark); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: var(--radius); border: 2px solid var(--teal); cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
   .btn-secondary:hover { background: var(--teal-light); transform: translateY(-2px); }
 
-  .hero-visual { display: flex; flex-direction: column; gap: 16px; }
-
-  /* ── IMAGE PLACEHOLDER (replaces hero-banner) ── */
+  /* ── IMAGE PLACEHOLDER ── */
   .img-placeholder { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--gray-200); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; }
   .img-placeholder-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
   .img-placeholder-icon { width: 48px; height: 48px; opacity: 0.3; }
@@ -120,12 +118,9 @@
   .cat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
   .cat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; text-decoration: none; }
   .cat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--teal-mid); }
-  .cat-card:hover .cat-img-wrap { background: var(--teal); }
-  .cat-card:hover .cat-img-wrap svg { stroke: #fff; }
-  .cat-card:hover .cat-img-wrap .cat-pattern { opacity: 0.15; }
-  .cat-img-wrap { background: var(--teal-light); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; transition: background 0.22s; }
-  .cat-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(var(--teal) 1.5px, transparent 1.5px); background-size: 18px 18px; transition: opacity 0.22s; }
-  .cat-img-wrap svg { width: 52px; height: 52px; stroke: var(--teal-dark); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; position: relative; z-index: 1; transition: stroke 0.22s; }
+  .cat-card:hover .cat-img-wrap img { transform: scale(1.05); }
+  .cat-img-wrap { background: var(--teal-light); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .cat-img-wrap img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; transition: transform 0.22s; }
   .cat-badge { position: absolute; top: 10px; right: 10px; background: var(--teal); color: #fff; font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 50px; z-index: 2; }
   .cat-body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .cat-name { font-size: 13.5px; font-weight: 700; color: var(--text); line-height: 1.3; }
@@ -168,31 +163,134 @@
   /* Visual panel */
   .alt-visual { position: relative; display: flex; flex-direction: column; gap: 16px; }
 
-  /* Section tags — all teal */
-  .alt-section .section-tag--rose   { background: var(--teal-light); color: var(--teal-xdark); }
-  .alt-section .section-tag--indigo { background: var(--teal-light); color: var(--teal-xdark); }
+  /* ── FAQ ── */
+  .faq-section { background: var(--gray-100); padding: 88px 32px; border-top: 1px solid var(--gray-200); }
+  .faq-inner { max-width: 1280px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 52px; }
+  .faq-header h2 { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--text); margin-bottom: 12px; }
+  .faq-header p { font-size: 15px; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
 
-  /* Headings — all teal italic */
-  .alt-content h2.h-rose   em { color: var(--teal-dark); }
-  .alt-content h2.h-indigo em { color: var(--teal-dark); }
+  .faq-accordion {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .faq-question {
+    padding: 22px 28px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15.5px;
+    line-height: 1.4;
+    transition: background 0.2s;
+  }
+  .faq-question:hover {
+    background: var(--teal-light);
+  }
+  .faq-answer {
+    padding: 0 28px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+  .faq-item.active .faq-answer {
+    padding: 0 28px 28px;
+    max-height: 500px;
+  }
+  .faq-toggle {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  .faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+  }
+  .faq-toggle svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--teal);
+    stroke-width: 2.5;
+  }
 
-  /* Lead borders — all teal */
-  .alt-content .lead--rose   { border-color: var(--teal); }
-  .alt-content .lead--indigo { border-color: var(--teal); }
-
-  /* Check icons — all teal */
-  .ck--rose   { background: var(--teal) !important; }
-  .ck--indigo { background: var(--teal-dark) !important; }
-
-  /* CTA buttons — all teal */
-  .btn-primary--rose   { background: var(--teal);      box-shadow: 0 4px 16px rgba(26,173,170,0.30); font-size: 12px; padding: 9px 18px; gap: 6px; }
-  .btn-primary--rose:hover   { background: var(--teal-dark); box-shadow: 0 8px 24px rgba(26,173,170,0.38); }
-  .btn-primary--indigo { background: var(--teal-dark); box-shadow: 0 4px 16px rgba(26,173,170,0.28); font-size: 12px; padding: 9px 18px; gap: 6px; }
-  .btn-primary--indigo:hover { background: var(--teal-xdark); box-shadow: 0 8px 24px rgba(26,173,170,0.36); }
-  .btn-secondary--rose   { color: var(--teal-dark); border-color: var(--teal); font-size: 12px; padding: 8px 18px; }
-  .btn-secondary--rose:hover   { background: var(--teal-light); }
-  .btn-secondary--indigo { color: var(--teal-dark); border-color: var(--teal); font-size: 12px; padding: 8px 18px; }
-  .btn-secondary--indigo:hover { background: var(--teal-light); }
+  /* ── LEAD FORM ── */
+  .lead-form-section {
+    background: var(--white);
+    padding: 88px 32px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .form-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--gray-100);
+    padding: 52px 48px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .form-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group.full {
+    grid-column: 1 / -1;
+  }
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  input, textarea, select {
+    padding: 14px 18px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 15px;
+    transition: border 0.2s;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(26,173,170,0.1);
+  }
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  .form-cta {
+    margin-top: 32px;
+    text-align: center;
+  }
 
   /* ── WHY CHOOSE ── */
   .why-section { background: var(--gray-100); padding: 88px 32px; border-top: 1px solid var(--gray-200); }
@@ -221,7 +319,7 @@
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-left   { animation: fadeUp 0.65s ease both; }
-  .hero-visual { animation: fadeUp 0.65s 0.15s ease both; }
+  .hero-banner-wrap { animation: fadeUp 0.5s ease both; }
   .intro-inner { animation: fadeUp 0.5s ease both; }
 
   /* ══════════════════════════════════════════
@@ -239,7 +337,8 @@
   }
 
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px 56px; }
+    .hero { padding: 40px 24px 56px; }
+    .hero-inner { gap: 32px; }
     .hero h1 { font-size: 30px; }
     .hero-stats { grid-template-columns: repeat(3, 1fr); }
     .intro { padding: 64px 24px; }
@@ -252,6 +351,7 @@
     .alt-inner--reverse .alt-content { order: 1; }
     .alt-inner--reverse .alt-visual  { order: 2; }
     .check-list { grid-template-columns: 1fr; }
+    .faq-accordion { max-width: 100%; }
   }
 
   @media (max-width: 640px) {
@@ -264,7 +364,8 @@
     nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .nav-inner { padding: 0 12px; min-width: max-content; }
     .nav-item { font-size: 10.5px; padding: 10px 12px; }
-    .hero-inner { padding: 36px 16px 44px; gap: 32px; }
+    .hero { padding: 32px 16px 40px; }
+    .hero-inner { gap: 28px; }
     .hero h1 { font-size: 24px; }
     .hero-desc { font-size: 14px; }
     .hero-badge { font-size: 11px; }
@@ -300,6 +401,8 @@
     .alt-content h2 { font-size: 22px; }
     .alt-content .lead { font-size: 14px; }
     .check-list li { font-size: 13px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-inner { padding: 40px 24px; }
   }
 
   @media (max-width: 380px) {
@@ -308,11 +411,17 @@
     .stat-num { font-size: 18px; }
     .why-feat-card { padding: 22px 16px; }
   }
-  .gift-img {
-    width: 640px;   /* Change as needed */
-    height: 450px;
+
+  .gift-img, .intro-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: var(--radius-lg);
-}
+    box-shadow: var(--shadow-lg);
+    display: block;
+    object-fit: cover;
+  }
+  .intro-img { margin-bottom: 24px; box-shadow: var(--shadow); }
 </style>
 </head>
 <body>
@@ -321,7 +430,7 @@
 <header>
   <div class="header-inner">
     <a href="#" class="logo" aria-label="KTech Home Appliances">
-      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABpAQcDASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAcDBAUGCAEC/8QAShAAAQQBAgMCBwkOBQQDAAAAAQACAwQFBhEHEiExUQgTMkFhcbEUFiI0N3N0k7IVFyM2UlVWYnKBkZTB0TNCobPSJlRjZMLT8P/EABwBAQEAAQUBAAAAAAAAAAAAAAABBAIDBQYHCP/EACsRAQABBAEDAgUEAwAAAAAAAAABAgMEEQUSITFBYQYyUZHhFDOh8FJx0f/aAAwDAQACEQMRAD8A7LREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAXxYeYoJJANyxpdt6gvtUb3xKf5t3sVjy01TqmZQw7jTlQ4j7i0un/kcvPv1ZX8y0vrHKK3+W71rxdo/QY/+LxSfijld/vT9o/46f4c6in1RpwZSxWjrvMzo+RhJHTbr19a2RaBwE/EFv0qT+ixHFziIKTZcDgp97Xk2LLD/hd7Wn8rvPm9fZwVWNNzIm3bj1em2uYoxeKt5eVV3mmP9zOvRe6+4pV8Fkvudia8V+aIkWHPcQxh/JG3ae9a19+rK/mSl9Y5RWSXEucSSTuSfOvFzdHHWKaYiY3LzjJ+LeTu3ZroudMT4iIjt94Sr9+rK/mSl9Y5V6HF/PX7sVKnp6rPYmdyxsY95JKimjVsXbkVSpC+aeZwZGxo3LiV0Pww0LX0vSFq21k2Wlb+EkHURD8hv9T51jZVrFx6d9Pf0hy3B5vN8re6YvTFEeZ1H2jt5bbjHXX0IX5FkMdpzQZWRElrT3Ant271coi4Ke71CmNREbERFFEREBERAREQEREBERAREQEREBERAREQEREBUb3xKf5t3sVZUb3xKf5t3sVjy01/LLkN/ln1rxev8s+teLuj51ny3bE66nwugBgcXzx3JpnulsA7eLYdujfSdu3zLSnEucXOJJJ3JPaV4i26LVNEzNMeWVk5t7JpopuTuKI1EfSBVadae5aiq1YnTTyuDGMaNy4nzJUrz27MdarE+aaRwaxjBuXHuC6E4W6Dg0xVF68GS5aVvwndohB/yt9Pef8A8dnKyqcenc+XIcJwl7lb3TT2ojzP0/L74X6Er6Xpi3caybLSt+G/tEII8hv9T51u6LDZHVWm8dcfTv5yhWsR7c8ckwa5u436hdYu3artU1VT3e0YeHZwrMWbMapj+7n3ZlFr3v30h+kuL/mG/wB09++kP0lxf8w3+622U2FFisTqTAZa0auMzFK5OGl5jhlDnco7TsPWF9ZjUGEw8rIsrlalKSRvMxs0oaXDvG6DJote9++j/wBJcX/MNX3DrPSc0rIotRY18j3BrWiw0kk9gCDPIiICLA5bWWlcVM6HIZ+hBK3o5hlBcPRsNyrKtxH0NYdyx6lpA/rks+0Ag2tFQo3Kl6s2zSsw2YXeTJE8Oaf3hWd3UGDpZJmNt5WnBcfyhsD5QHnfs2HpQZNERAVGezDC9sb3EvcNwxrS523fsFZ5fP4XESxw5TKVKckg3Y2aUNLh2bjdY7VFEZACMziCORzJBOYRK3ZrXjbYtIPVwOx23G+x6IM/BNFPHzxPDm77H0HuPcVUWM07E+Ki1r4+UhjGF5JJlLWgF3UA+jcjrt3bLJoCIiAiIgIiICo3viU/zbvYqyo3viM/zbvYrHlpr+WXIb/LPrXi9f5Z9a8XdHzrPkXxNJHDE6WV7WMaN3OcdgB6UmkjhidLK9rGNG7nOOwAUfZvKZDVWTZiMNDI+Eu2DR0Mh/Kd3AelY2Tk02Kdz5cxwvC3uUvdFPamPM/T8urPB0paXv4D3x4y9Fkb7nGOT4Ozqn6nKeoJHXfzg9OnbLa5W4M4uzw8nOQhsunuWGhtpgcRE5m+/KB/8u3/AFC6Z0/mKWbxzLlN+4PR7D5THdxC6xeuVXapqql7Rg4dnCsxZsxqI/u592QUf6s4S6b1LnrGZv3MrHYscvO2GWMMGwA6AsJ83epARbTMc78X+GOA0hpVuVxtrJyzmwyLlsSsc3Yg/ksB36d6yPDXhJprUmicdm71zKx2LIeXthljDByyOaNgWE9jR51s/hL/ACeR/TY/Y5ZrgV8lOE/Zl/3nq77J6vnQ/DHAaQzTsrjLWSlnMLoS2xKxzeUkE9AwHfoPOo08KTrqfDjvpu+2V0GuffCj/GjDfRD9spBLbfvEaP8AzhnPr4v/AK1WocENJ0r0FyK/mjJBI2RodNGQSDuN/wAGpPBGyKbUJAG5OwCgbiLrzO6s1IdIaIfL4lzjE+aE8r5yPK+F/lYO/wA/XzKSeMublwPDzJWq55bEzRXiPcXnlJ9YG59YWneDJgK8Gn7WoZIw61ZlMEbyOrY27bges9vqCqSaW4FYavXbLqK9YvWT5UUDvFxN9G+3MfXuPUstkeCeirMBZWbfpP26Pjsc3X0h4P8ARSWibNNY4Z6Wfo/TjsO+422BYfKyQM5d2u223G569FEPFj5fcX+3U+0uhVz1xY+X3F/t1PtJBLoVE3Hem471FQB4UP4zYP6M77anmh8Rr/NN9gUDeFCf+psH9Hd9tTzQ+I1/mm+wKykKyIiiiIiAiIgIiICo3viM/wA272KsqN74jP8ANu9iseWmv5Zchv8ALPrXxLIyKN0kjgxjRu5xOwAX1O9sYe97g1rdySTsAFiquHu6uma+cy08Gw7jpyyWj6O5np8/s7Xk5NNinc+XhvD8Ne5S/wBFHamPM/T8sG9mV1xkDRxQdBionfhbDxs0n+vob/FSVpfT2N09R9z0Yvhu28bM7y5D6T/TsW047Sbqujosji67G04XOjfFG3YxgbfC9Pb1Kxq61du1XauqqXsuDg2cGzFmzGoj+fefcWV0xnbmByLbVV5LDsJYifgyN7vX6VikW2zHQmBy9PNY5l2k/djujmnymHzghX6gLS+euYDIC1WPMw9JYiej2/39Km/BZanmccy7Sk5mO6OafKYfOD6VpmGqJR74S/yeR/TY/Y5ZngV8lOE/Zm/3nrD+Ev8AJ5H9Nj9jlmeBXyU4T9mX/eenoerdlz54Uo31NhxvtvUd9sroNc+eFJ+M+G+iO+2Ugld/eKzf6WRfVP8A+SzehOEmV07qyjmbGoo7cVZzi6ERuHNuxze0n07qXQibNIw8Jdr3cOmlvktux838HK+8Hp7H8L6Ib2slma7185PsIWf4kYAal0VksS3/ABpIueD5xp5mj95G3qKiTwd9XRYi7Z0jl3Ct46YurOkPLyy9jozv2E7Db0jbzhD1T6iIooubeOtJ+R4xwUI5fFPsR14mv235S47brpJc9cWPl9xf7dT7SsJK9PAnNfpXF9S//kvPvE5r9LIvqX/8lPKJs1DkviVoy5ozK0KtvJtvusM8Y1zWlvKA7bbqSurqHxGv8032BQN4UP4zYP6M77anmh8Rr/NN9gSSFZERRRERAREQEREBUrjS6pM1oJJjcAB5+iqokJMbjTmGvw8z9uUS5PCX3QsfzMr+Ids4jsL+/wDZ7O/fzbC3TWfaNhhb4A/9d39lPqLeu36rtXVUw8Hj7GDZizZjUR/PvLVuGVKzU0t7mvVZIXmZ5McrCCQdvMVqmvNDT17JvYOtJNBI74cEY3dGT3Dzj2KVEW1tmaQD729QfmXIfy7v7J729QfmXIfy7v7KfkTZpAPvb1B+Zch/Lu/ssxpaLVmAyAs1sNfdG7pLEYHbPH8O30qZkTZpHfGjF5XVWgIIMPjrEtl1mOQwPAY9oAdvuHbd6zXCPGX8Nw8xWNydd1e3C2QSRuIJbvK8js6dhCteLmt26Dw+LyksVd1a1lq1KzJO8tbBFI7Z8m/6oBK1e3xwwjIdYX8c2vmcdg20WUpKU3Mbk9nnAjJ7G7OaBv16EqKlxQx4QOkdR6jzuMsYTFyXI4axY9zXtHK7m326kLI4/iLq/EalpYHX2mMfjZctWnmxk9C4Z4zJE3mdFJuAQdj2jcf00eLwnIptEUrkWnXHUslljbWPJd4qCu4t2sc+25YQ+MD9Z38RrbL+7uPv/bP+oqr1t7j7zDeu/bfr+ArKrk+MucbxMyukacOka7aOQZTj+6WTfDPY5g07sYGkHt29alLiHqWvpDRuR1BYYJDVj/Axb7GaVxDY4x6XPLR+9XaaZ2Lm8W3n8rYb+tRfxW4UQalsSZnCSx08q7YyMf0jnI85I8l3p8/n71ZXuLuRh4LS6zZhK0ebqZBuNvY2aUtZBY8eInNLu3Ybg/vWLv8AGnUlDGZmpb09hjn8ZkKFQiDIGWm9tsuDCZAN2kcp3BHZ1UVaYy7xs0vD7i+5tnI14/gs8ZELGw9Dmnm29ZV1LneOGYi8RWw7scH9DIKzYiN/TITt6wsjh+L+XlnGLyeEx0eUr6lo4W2alwz1iyy0uD43gdXNA2LT2HtW7aw1ZYwetdI4CKnHNHnrFiKSVziDEI4w8EDz777K7TT74W4bNYPSwq6gte6chJO+aR/jTIfhbbAuPaei0HiLpDUmT4w0M1Rxck2PidWL5w9oA5XfC6E79FmcRxZr3+MlvRBx/i8a10lOpk+Yls96JjZJYe4bMf8AxHpC1+9x5ZSOuaVnExQZLT77H3NbJIRFkGQkc4B/LbuCQN+hBUXSb0UV5XiFrHKaqyGn9A6Xx+SkxFaCXJT37hgZ4yVpc2KMAHc7DtOw9pwOueMuotP61GmX4/SmNnZja9uY5bLOiaJJB8KJjgwh/KR27DftQX/H7SWotRZ3E2MNjJLkUEBbI5r2jlPNv5yFL1NrmVIWOGzmxtBHcdlD2peLucx3EODSVbG6cZK2CpJJ90MoaxtumG7hWcW8rg3s69SewHsUzICIiAiIgIiICIiAiIgIiICIiAiIgIiINZ4haOp6zpYynendFFQydfIcojDxKYnc3i3A/wCU9hWCzHCTTeT99UcpfXraijqNdFVjbF7lfXDuSSPYeVu7fqPMpDRBG+J4XT++CtnNUaxymprdCpJVx/umGKJlbxjeV8nLGBzvI6bu/tt4/g9p88OIdItlLJ46dem7KCFvj3xQzCVrT6OYdnpUkogiyzwktt1pltS4rWU+PdlLbbc0BxVWwGuaAAGvlY5zeg82y2fiNoXHa7jxVPNWJzjKVv3VNTjJa204NIaHOBBABO/RbYiCJ8hwN0/Lis7hMfkLdHDZixVsy0f8ZkcsLg4uBeSTzgAO3PmCzup+FWk8tpVmmqWNp4jH+74Ls0VSswNmMbt+Vw84I6H0Le0QaJqnhlhr+m6OG04+LSvuHJxZOCXH1IzyzR78pLXDlPb5wexU4OHuTmyuAy2d1ndzN7CWp568s1KGLmEsQZyERho2GxO/ad1v6IInp8CNKU6ePnq2LrNQUrzL/wB2DK8yyzCTne50ZdyfCG7TsOxVNU8ENOaj0xm8NkLdgy5LMTZaG41gEtSSQMa5re9pDNiD2794BUqIgjjM8L7DtS29QaY1nldNW8hUjrZAVoYpWWPFjlY/aQHleAdtx/p13sM5wfs3tTjUNTW12vddj4KM8ljG1bbphEOj3eNYQHE9SQApWRBF2vOElnWL/E5TWuQdj5I4Gy1TQrOHNGG7uieWc0RcW7nlPaT5tgpPhjbFEyJm/KxoaNzv0C+kQEREBERAREQf/9k=" alt="KTech Home Appliances Logo" />
+      <img src="ktechlogo.png" alt="KTech Home Appliances Logo" />
     </a>
     <div class="header-actions">
       <a href="https://wa.me/919999999999" class="btn-wa" target="_blank" rel="noopener">
@@ -341,6 +450,9 @@
 <!-- ═══ HERO ══════════════════════════════════ -->
 <section class="hero" aria-labelledby="hero-h1">
   <div class="hero-inner">
+    <div class="hero-banner-wrap">
+      <img src="ktech-corporate-gifts-wedding-return-gifts-banner.png" alt="KTech corporate gifts and wedding return gifts" class="hero-banner" />
+    </div>
     <div class="hero-left">
       <h1 id="hero-h1">Premium Corporate Gifts, <em>Wedding Return Gifts</em> &amp; Bulk Home Appliance Suppliers</h1>
       <p class="hero-desc">Looking for a trusted corporate gift supplier in Tamil Nadu? KTech manufactures and supplies customized corporate gifts, wedding return gifts, employee gifting products, and branded home appliances for businesses, distributors, supermarkets, and retail chains.</p>
@@ -354,18 +466,6 @@
           Request Catalogue
         </a>
       </div>
-    </div>
-    <div class="hero-visual">
-      <!-- Simple image placeholder (hero) -->
-      <div class="img-placeholder">
-        <div class="img-placeholder-inner">
-          <div class="img-placeholder-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <span class="img-placeholder-label">Image</span>
-        </div>
-      </div>
-    
     </div>
   </div>
 </section>
@@ -389,6 +489,7 @@
           <div class="spec-item"><div class="spec-check"><svg viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg></div><span class="spec-text">Bulk gifting solutions</span></div>
           <div class="spec-item"><div class="spec-check"><svg viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg></div><span class="spec-text">Wholesale home appliances</span></div>
         </div>
+        <img src="D-2 FF.png" alt="KTech corporate gift product showcase" class="intro-img" style="margin-top: 24px;">
       </div>
       <div class="intro-right">
         <p class="intro-summary">From startups to large enterprises, KTech helps businesses create memorable gifting experiences with reliable products, attractive packaging, and affordable wholesale pricing.</p>
@@ -408,48 +509,49 @@
     </div>
     <div class="cat-grid">
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M9 3h6v8l2 2v4a2 2 0 01-2 2H9a2 2 0 01-2-2v-4l2-2V3z"/><path d="M9 3H7l-1 3h2"/><path d="M15 3h2l1 3h-2"/><path d="M8 17h8"/><line x1="12" y1="12" x2="12" y2="17"/></svg><span class="cat-badge">Popular</span></div>
+        <div class="cat-img-wrap"><img src="ktech-mixer-grinder-corporate-gift.png" alt="Mixer Grinders corporate gift"><span class="cat-badge">Popular</span></div>
         <div class="cat-body"><span class="cat-name">Mixer Grinders</span><span class="cat-desc">High-performance blenders for everyday gifting — available in 500W &amp; 750W variants.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M4 6h16v2a8 8 0 01-8 8 8 8 0 01-8-8V6z"/><path d="M8 6V4"/><path d="M16 6V4"/><path d="M12 14v4"/><path d="M9 20h6"/><path d="M20 8c1.5.5 2 1.5 2 2.5S21.5 12 20 12"/></svg></div>
+        <div class="cat-img-wrap"><img src="ktech-electric-kettle-gift.png" alt="Electric Kettles corporate gift"></div>
         <div class="cat-body"><span class="cat-name">Electric Kettles</span><span class="cat-desc">Stainless steel &amp; double-wall kettles — sleek corporate gift staple for offices and homes.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="16" cy="12" r="2.5"/><path d="M2 9h20"/></svg><span class="cat-badge">Bestseller</span></div>
+        <div class="cat-img-wrap"><img src="ktech-induction-stove-bulk-gift.png" alt="Induction Stoves bulk gift"><span class="cat-badge">Bestseller</span></div>
         <div class="cat-body"><span class="cat-name">Induction Stoves</span><span class="cat-desc">Energy-efficient, ISI-certified induction cooktops ideal for bulk corporate orders.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M3 11h18"/><path d="M4 11V7a1 1 0 011-1h14a1 1 0 011 1v4"/><path d="M4 11v5a5 5 0 0010 0v-5"/><path d="M19 11v3"/><path d="M2 20h10"/></svg></div>
+        <div class="cat-img-wrap"><img src="ktech-cookware-gift-set.png" alt="Cookware gift set"></div>
         <div class="cat-body"><span class="cat-name">Cookware Gifts</span><span class="cat-desc">Non-stick pans, pressure cookers, and tri-ply sets — trusted kitchen gifting essentials.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div class="cat-img-wrap"><img src="ktech-kitchen-appliance-gift-set.png" alt="Kitchen appliance gift set"></div>
         <div class="cat-body"><span class="cat-name">Kitchen Appliances</span><span class="cat-desc">Toasters, choppers, rice cookers &amp; more — practical gifts with everyday value.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="cat-img-wrap"><img src="ktech-utility-home-products-gift.png" alt="Utility home products gift"></div>
         <div class="cat-body"><span class="cat-name">Utility Home Products</span><span class="cat-desc">Drinkware, storage, serving accessories — thoughtful everyday-use gifts for any occasion.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg><span class="cat-badge">New</span></div>
+        <div class="cat-img-wrap"><img src="ktech-employee-joining-kit.png" alt="Employee joining kit"><span class="cat-badge">New</span></div>
         <div class="cat-body"><span class="cat-name">Employee Joining Kits</span><span class="cat-desc">Curated onboarding gift sets to welcome new hires — branded, packaged, and ready to ship.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg><span class="cat-badge">Seasonal</span></div>
+        <div class="cat-img-wrap"><img src="ktech-festive-gift-hamper.png" alt="Festive gift hamper"><span class="cat-badge">Seasonal</span></div>
         <div class="cat-body"><span class="cat-name">Festive Gift Hampers</span><span class="cat-desc">Diwali, Pongal &amp; New Year hampers — custom-packed for large corporate orders.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="cat-img-wrap"><img src="ktech-wedding-return-gifts.png" alt="Wedding return gifts"></div>
         <div class="cat-body"><span class="cat-name">Wedding Return Gifts</span><span class="cat-desc">Elegant home appliance sets for weddings — minimum 100 pcs, custom packaging available.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
       <a href="#enquiry" class="cat-card">
-        <div class="cat-img-wrap"><div class="cat-pattern"></div><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="cat-badge">Best Value</span></div>
+        <div class="cat-img-wrap"><img src="ktech-promotional-gift-sets.png" alt="Promotional gift sets"><span class="cat-badge">Best Value</span></div>
         <div class="cat-body"><span class="cat-name">Promotional Gift Sets</span><span class="cat-desc">Logo-printed combo sets for brand activations, trade shows &amp; dealer incentive programs.</span><span class="cat-enquire">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></div>
       </a>
     </div>
   </div>
 </section>
+
 <!-- ═══ SECTION 1 — CUSTOMIZATION ════════════════ -->
 <section class="alt-section alt-section--light" aria-labelledby="custom-h2">
   <div class="alt-inner">
@@ -472,8 +574,8 @@
       </div>
     </div>
     <div class="alt-visual">
-      <img src="D-1FF.png" alt="Customized Corporate Gifts" class="gift-img">
-  </div>
+      <img src="ktech-customized-corporate-gifts-logo-printing.png" alt="Customized corporate gifts with logo printing" class="gift-img">
+    </div>
   </div>
 </section>
 
@@ -499,11 +601,7 @@
       </div>
     </div>
     <div class="alt-visual">
-      <img src="D-2 FF.png" alt="Customized Corporate Gifts" class="gift-img">
-        <div class="img-placeholder-inner">
-         
-        </div>
-      </div>
+      <img src="ktech-wholesale-wedding-return-gifts.png" alt="Wholesale wedding return gifts" class="gift-img">
     </div>
   </div>
 </section>
@@ -530,14 +628,7 @@
       </div>
     </div>
     <div class="alt-visual">
-      <img src="D-3 FF.png" alt="Customized Corporate Gifts" class="gift-img">
-        <div class="img-placeholder-inner">
-       
-        
-        </div>
-       
-        </div>
-      </div>
+      <img src="ktech-bulk-home-appliance-supply.png" alt="Bulk home appliance supply for supermarkets and retail chains" class="gift-img">
     </div>
   </div>
 </section>
@@ -575,19 +666,60 @@
   </div>
 </section>
 
-<!-- ═══ FOOTER CTA ════════════════════════════ -->
-<section class="footer-cta" id="enquiry">
-  <h2>Ready to place a bulk order?</h2>
-  <p>Get in touch with our team for wholesale pricing, custom branding, and fast delivery across Tamil Nadu.</p>
-  <div class="footer-cta-btns">
-    <a href="https://wa.me/919999999999" class="btn-primary" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.121 1.524 5.853L.057 23.215a.75.75 0 00.928.928l5.363-1.467A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.565 9.565 0 01-4.928-1.366l-.353-.21-3.647.997.974-3.565-.23-.367A9.566 9.566 0 012.4 12c0-5.295 4.305-9.6 9.6-9.6s9.6 4.305 9.6 9.6-4.305 9.6-9.6 9.6z"/></svg>
-      WhatsApp Us Now
-    </a>
-    <a href="mailto:info@ktechappliances.com" class="btn-secondary" id="catalogue">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Email for Catalogue
-    </a>
+<!-- ═══ FAQ SECTION ═════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-tag">Have Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-accordion" id="faqAccordion">
+      <!-- FAQ items populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LEAD FORM SECTION ═══════════════════════ -->
+<section class="lead-form-section" id="enquiry">
+  <div class="form-inner">
+    <div class="form-header">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Send Enquiry for Bulk Orders</h2>
+      <p>We will get back to you within 24 hours with the best quote.</p>
+    </div>
+    <form id="leadForm" onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Full Name <span style="color:#e74c3c;">*</span></label>
+          <input type="text" id="name" required placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" placeholder="Your company / organization">
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number <span style="color:#e74c3c;">*</span></label>
+          <input type="tel" id="mobile" required placeholder="10-digit mobile number">
+        </div>
+        <div class="form-group">
+          <label for="city">City <span style="color:#e74c3c;">*</span></label>
+          <input type="text" id="city" required placeholder="e.g. Chennai, Coimbatore">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Approx. Quantity</label>
+          <input type="text" id="quantity" placeholder="e.g. 100 pcs, 500 pcs">
+        </div>
+        <div class="form-group full">
+          <label for="message">Message / Requirements</label>
+          <textarea id="message" placeholder="Tell us about your requirement (product type, customization, budget etc.)"></textarea>
+        </div>
+      </div>
+      <div class="form-cta">
+        <button type="submit" class="btn-primary" style="padding: 16px 48px; font-size: 16px;">
+          Send Enquiry
+        </button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -596,6 +728,105 @@
   <p><strong>KTech Home Appliances</strong> — Corporate Gift Manufacturer &amp; Wholesale Supplier in Tamil Nadu</p>
   <p style="margin-top:6px;">© 2026 KTech Home Appliances. All rights reserved.</p>
 </footer>
+
+<script>
+  // FAQ Data
+  const faqs = [
+    {
+      q: "Do you supply corporate gifts in bulk across Tamil Nadu?",
+      a: "Yes. KTech is a trusted corporate gift supplier in Tamil Nadu, providing bulk corporate gifts, customized corporate gifts, and wholesale gift products for businesses of all sizes. We serve companies, educational institutions, manufacturing industries, distributors, and retail organizations across Chennai, Coimbatore, Madurai, Trichy, Salem, Hosur, Tiruppur, and other major cities. Our bulk ordering capabilities make us a preferred choice for corporate gifts for employees, client gifting, festive gifting, and promotional campaigns."
+    },
+    {
+      q: "Can you print company logos on gifts?",
+      a: "Absolutely. KTech specializes in customized corporate gifts with logo printing, personalized branding, and custom packaging solutions. We can add your company logo, brand colors, promotional messages, and personalized designs to a wide range of corporate gifting products and home appliances. Our custom corporate gifts are ideal for employee appreciation programs, client gifting, dealer meets, trade shows, and corporate events."
+    },
+    {
+      q: "Do you provide wedding return gifts wholesale?",
+      a: "Yes. KTech is a leading supplier of wedding return gifts wholesale in Tamil Nadu. We offer practical and premium home appliance gifts for weddings, receptions, engagements, and family celebrations. Our wedding gift wholesale solutions include customized packaging, personalized branding, bulk order discounts, and distributor pricing. We help customers find high-quality customized wedding return gifts that combine elegance, utility, and value."
+    },
+    {
+      q: "What is the minimum order quantity for corporate gifts?",
+      a: "The minimum order quantity depends on the product category and customization requirements. As a corporate gifts manufacturer, wholesaler, and distributor, KTech supports both medium and large-volume orders for customized corporate gifts, employee gifts, promotional gifts, and branded corporate gifts. Contact our team with your requirements, and we will recommend the most suitable wholesale corporate gifting solution based on your budget and quantity."
+    },
+    {
+      q: "Do you supply to supermarkets and retail chains?",
+      a: "Yes. KTech is a trusted home appliances manufacturer, supplier, distributor, and wholesale supplier serving supermarkets, hypermarkets, retail chains, department stores, and electronics retailers across Tamil Nadu. We provide bulk home appliance supply, customized retail packaging, distributor pricing, and reliable logistics support. Our products are supplied to supermarkets and retail chains looking for quality-assured home appliances backed by a strong manufacturing and distribution network."
+    },
+    {
+      q: "Why choose KTech for corporate gifting and wholesale supply?",
+      a: "With over 25 years of manufacturing experience, KTech has built a reputation as a reliable corporate gift supplier, home appliances manufacturer, wholesale distributor, and supermarket supply partner in Tamil Nadu. We offer quality products, competitive wholesale pricing, customization options, logo printing, bulk order fulfillment, and dependable delivery support, making us a preferred choice for businesses, distributors, retailers, and event organizers."
+    }
+  ];
+
+  // Render FAQ
+  function renderFAQs() {
+    const container = document.getElementById('faqAccordion');
+    container.innerHTML = '';
+
+    faqs.forEach((faq, index) => {
+      const item = document.createElement('div');
+      item.className = 'faq-item';
+      item.innerHTML = `
+        <div class="faq-question" data-index="${index}">
+          ${faq.q}
+          <span class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-answer">${faq.a}</div>
+      `;
+      container.appendChild(item);
+
+      // Toggle functionality
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // Form submission handler (demo)
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button');
+    
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    // Simulate API call
+    setTimeout(() => {
+      alert("Thank you! Your enquiry has been received. Our team will contact you shortly.");
+      form.reset();
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 1200);
+  }
+
+  // Initialize
+  window.onload = function() {
+    renderFAQs();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  };
+</script>
 
 </body>
 </html>
